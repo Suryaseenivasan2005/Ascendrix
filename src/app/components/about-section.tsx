@@ -69,36 +69,58 @@ export function AboutSection() {
             transition={{ duration: 0.8 }}
           >
             <motion.h2
-              className="text-5xl md:text-6xl font-bold mb-6"
+              className="text-5xl md:text-6xl font-bold mb-2"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
             >
               <span className="bg-gradient-to-r from-[#D4AF37] to-white bg-clip-text text-transparent">
-                About Ascendrix
+                Our Journey Begins..
               </span>
             </motion.h2>
+            <motion.div
+              className="text-2xl font-bold text-[#D4AF37] mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.1 }}
+            >
+              (2025–2026)
+            </motion.div>
 
             <motion.p
-              className="text-xl text-gray-300 mb-6 leading-relaxed"
+              className="text-lg text-gray-300 mb-6 leading-relaxed font-light"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.2 }}
             >
-              Ascendrix is the premier student council of Tagore Engineering College,
-              dedicated to fostering leadership, innovation, and excellence among students.
+              Every great journey begins with a vision and also the inspiration of our leaders which is led by our <span className="font-semibold text-white border-b border-[#D4AF37]">Ms.Raskshana Mam</span> and started with a simple but powerful idea: students deserve a voice.
             </motion.p>
 
             <motion.p
-              className="text-lg text-gray-400 leading-relaxed"
+              className="text-base text-gray-400 mb-6 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.3 }}
             >
-              We orchestrate world-class events, workshops, and initiatives that empower
-              students to reach their full potential. Our mission is to create an
-              ecosystem where innovation meets opportunity, and where every student
-              has the platform to shine.
+              The Student Council was created to give students the opportunity to be heard, to lead, and to work together to make our college a better place. It serves as a bridge between the student body and the administration, helping to share ideas, raise concerns, and build a stronger college community.
             </motion.p>
+
+            <motion.p
+              className="text-base text-gray-400 leading-relaxed mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.4 }}
+            >
+              We believe that leadership starts early, and through the Student Council, we are learning to take responsibility, organize events, support our peers, and bring positive change. This journal is part of that mission—to keep everyone informed, inspired, and involved.
+            </motion.p>
+
+            <motion.div
+              className="text-lg text-[#D4AF37] font-semibold italic border-l-2 border-[#D4AF37] pl-4 py-1"
+              initial={{ opacity: 0, x: -20 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ delay: 0.5 }}
+            >
+              "Let this be the beginning of something bigger. Because when students lead, great things happen."
+            </motion.div>
           </motion.div>
 
           {/* Right Stats Grid */}

@@ -36,15 +36,21 @@ export function Gallery() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          className="text-center mb-20"
+          className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-[#D4AF37] to-white bg-clip-text text-transparent">
-              Gallery
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/5 border border-white/10 rounded-full text-xs text-[#D4AF37] font-bold mb-6 uppercase tracking-[0.2em] shadow-lg backdrop-blur-sm">
+            Batch of Brilliance – Shining Beyond Boundaries
+          </div>
+          <h2 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
+            <span className="bg-gradient-to-r from-[#D4AF37] via-white to-[#D4AF37] bg-clip-text text-transparent">
+              Ascendrix 2025
             </span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Capturing moments of excellence, innovation, and celebration
+          <div className="text-2xl md:text-3xl text-white font-light max-w-3xl mx-auto mb-4 tracking-wide">
+            The batch that turns moments into magic ✨
+          </div>
+          <p className="text-[#D4AF37] font-semibold tracking-widest text-sm">
+            EST. 30/08/2025
           </p>
         </motion.div>
 
