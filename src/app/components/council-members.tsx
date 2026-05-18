@@ -1,15 +1,15 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useInView } from "motion/react";
 import { useRef, useState } from "react";
-import { 
-  Shield, 
-  Award, 
-  Scroll, 
-  Layers, 
-  Palette, 
-  Trophy, 
-  Activity, 
-  Search, 
+import {
+  Shield,
+  Award,
+  Scroll,
+  Layers,
+  Palette,
+  Trophy,
+  Activity,
+  Search,
   Sparkles,
   Users,
   UserCheck,
@@ -177,10 +177,10 @@ export function CouncilMembers() {
       >
         {/* Glow Effect */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/15 to-[#7A0019]/15 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        
+
         {/* Card Border glow */}
         <div className="relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-[#D4AF37]/40 transition-all duration-300 flex items-center gap-4">
-          
+
           {/* Avatar Monogram */}
           <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${grad} flex flex-col items-center justify-center font-bold text-lg relative overflow-hidden group-hover:scale-105 transition-transform duration-300 shadow-inner`}>
             <span className="relative z-10">{initials}</span>
@@ -220,7 +220,7 @@ export function CouncilMembers() {
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/35 to-transparent" />
 
       <div className="relative max-w-7xl mx-auto z-10">
-        
+
         {/* Header Block */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -253,7 +253,7 @@ export function CouncilMembers() {
               className="w-full pl-12 pr-10 py-4 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full text-white placeholder-gray-500 focus:outline-none focus:border-[#D4AF37]/50 focus:ring-1 focus:ring-[#D4AF37]/30 transition-all shadow-lg"
             />
             {isSearching && (
-              <button 
+              <button
                 onClick={() => setSearchTerm("")}
                 className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-semibold text-[#D4AF37] hover:text-white transition-colors"
               >
@@ -283,7 +283,7 @@ export function CouncilMembers() {
                 ))}
               </div>
             ) : (
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 className="text-center py-16 bg-white/5 border border-white/5 rounded-3xl backdrop-blur-md"
@@ -301,12 +301,12 @@ export function CouncilMembers() {
         ) : (
           /* Normal Structured Hierarchical View */
           <div className="space-y-24">
-            
+
             {/* 1. Office Bearers Section */}
             <div>
               <div className="flex items-center gap-3 mb-10 border-b border-white/10 pb-4">
                 <div className="w-2.5 h-7 bg-gradient-to-b from-[#D4AF37] to-[#7A0019] rounded-full" />
-                <h3 className="text-3xl font-extrabold text-white tracking-wide">
+                <h3 className="text-3xl font-bold tracking-wide text-white">
                   Office Bearers
                 </h3>
               </div>
@@ -324,10 +324,10 @@ export function CouncilMembers() {
                   >
                     {/* Golden luxury glow behind card */}
                     <div className="absolute inset-0 bg-gradient-to-r from-[#D4AF37]/25 to-amber-500/10 rounded-3xl blur-2xl opacity-40 group-hover:opacity-100 transition-opacity duration-500" />
-                    
+
                     {/* Sleek metallic glass card */}
                     <div className="relative backdrop-blur-2xl bg-white/5 border-2 border-white/10 group-hover:border-[#D4AF37]/70 rounded-3xl p-8 transition-all duration-300 flex items-center gap-6 shadow-2xl">
-                      
+
                       {/* Generous Initial emblem */}
                       <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#D4AF37] via-yellow-200 to-[#AA7C11] text-black font-black text-2xl flex items-center justify-center shadow-lg relative overflow-hidden">
                         <span>{getInitials(m.name)}</span>
@@ -366,9 +366,9 @@ export function CouncilMembers() {
                     className="relative group cursor-pointer"
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-[#7A0019]/20 to-[#D4AF37]/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                    
+
                     <div className="relative backdrop-blur-xl bg-white/5 border border-white/10 group-hover:border-[#7A0019]/60 rounded-2xl p-6 transition-all duration-300 flex items-center gap-4">
-                      
+
                       <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#7A0019] via-rose-600 to-[#4D000F] text-white font-extrabold text-lg flex items-center justify-center shadow-md">
                         {getInitials(m.name)}
                       </div>
@@ -423,13 +423,13 @@ export function CouncilMembers() {
 
             {/* 2. Executive & Joint Members Section (Tabbed view) */}
             <div className="pt-8">
-              
+
               {/* Heading and switcher */}
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12 border-b border-white/10 pb-6">
                 <div className="flex items-center gap-3">
                   <div className="w-2.5 h-7 bg-gradient-to-b from-[#D4AF37] to-[#7A0019] rounded-full" />
                   <div>
-                    <h3 className="text-3xl font-extrabold text-white tracking-wide">
+                    <h3 className="text-3xl font-bold tracking-wide text-white">
                       Ascendrix Assembly
                     </h3>
                     <p className="text-sm text-gray-400 mt-1">
@@ -442,21 +442,19 @@ export function CouncilMembers() {
                 <div className="flex bg-white/5 border border-white/10 rounded-full p-1 self-stretch md:self-auto shadow-inner">
                   <button
                     onClick={() => setActiveTab("executive")}
-                    className={`relative px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${
-                      activeTab === "executive" 
-                        ? "bg-gradient-to-r from-[#D4AF37] to-[#7A0019] text-white shadow" 
+                    className={`relative px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${activeTab === "executive"
+                        ? "bg-gradient-to-r from-[#D4AF37] to-[#7A0019] text-white shadow"
                         : "text-gray-400 hover:text-white"
-                    }`}
+                      }`}
                   >
                     Executive Members ({executiveMembers.length})
                   </button>
                   <button
                     onClick={() => setActiveTab("joint")}
-                    className={`relative px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${
-                      activeTab === "joint" 
-                        ? "bg-gradient-to-r from-[#D4AF37] to-[#7A0019] text-white shadow" 
+                    className={`relative px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${activeTab === "joint"
+                        ? "bg-gradient-to-r from-[#D4AF37] to-[#7A0019] text-white shadow"
                         : "text-gray-400 hover:text-white"
-                    }`}
+                      }`}
                   >
                     Joint Members ({jointMembers.length})
                   </button>
