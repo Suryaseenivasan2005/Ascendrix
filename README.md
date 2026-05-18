@@ -1,7 +1,7 @@
 
-  # Cinematic Student Council Website
+  # Ascendrix Student Council Website
 
-  This is a code bundle for Cinematic Student Council Website. The original project is available at https://www.figma.com/design/qCdES9jChrLNc6NIGUT60m/Cinematic-Student-Council-Website.
+  This is a code bundle for Ascendrix Student Council Website.
 
   ## Running the code
 
