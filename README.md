@@ -1,4 +1,6 @@
+A modern student council website built with React, Vite, Tailwind, and a component-driven UI structure.
 
+<<<<<<< HEAD
 # Ascendrix Student Council Website
 
 A modern student council website built with React, Vite, Tailwind, and a component-driven UI structure.
@@ -17,6 +19,22 @@ This project contains the Ascendrix Student Council website source code. It uses
 - React Router
 - TypeScript-compatible setup
 
+=======
+## Overview
+
+This project contains the Ascendrix Student Council website source code. It uses a component-based architecture inside `src/app`, with reusable UI components under `src/app/components/ui` and global styles in `src/styles`.
+
+## Key Technologies
+
+- React
+- Vite
+- Tailwind CSS
+- Shadcn-style UI components
+- Radix UI primitives
+- React Router
+- TypeScript-compatible setup
+
+>>>>>>> 667a28b3e565165ce7f8a3a5cac0c4b0a614ccca
 ## Quick Start
 
 ### Install dependencies
@@ -72,4 +90,8 @@ pnpm build
 - This is a private workspace package configured for Vite and Tailwind.
 - If you use `pnpm` in a monorepo, make sure `pnpm-workspace.yaml` is configured correctly.
 - Update the `package.json` `name` and metadata if you rename or repurpose the project.
+<<<<<<< HEAD
   
+=======
+  
+>>>>>>> 667a28b3e565165ce7f8a3a5cac0c4b0a614ccca
