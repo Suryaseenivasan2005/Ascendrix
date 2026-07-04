@@ -1,17 +1,21 @@
 import { motion } from "motion/react";
 import { useInView } from "motion/react";
 import { useRef } from "react";
-import { Users, Award, GraduationCap, BookOpen, Sparkles, Flame, Rocket, MoreHorizontal } from "lucide-react";
+import { Sparkles, GraduationCap, PartyPopper, Heart, Flame, Rocket, Sun, Zap, Trophy, Music, Venus, Award } from "lucide-react";
 
 const events = [
-  { id: 1, title: "Student Council Formation", category: "Milestone", icon: Users, color: "from-amber-400 to-orange-500" },
-  { id: 2, title: "Badge Ceremony", category: "Ceremony", icon: Award, color: "from-yellow-300 to-amber-500" },
-  { id: 3, title: "Induction Day", category: "Ceremony", icon: GraduationCap, color: "from-rose-400 to-red-500" },
-  { id: 4, title: "Teacher's Day", category: "Celebration", icon: BookOpen, color: "from-purple-400 to-indigo-500" },
-  { id: 5, title: "Aurora-2K25 Celebration", category: "Fest", icon: Sparkles, color: "from-fuchsia-400 to-pink-500" },
-  { id: 6, title: "Ignite 2K25", category: "Symposium", icon: Flame, color: "from-orange-400 to-red-500" },
-  { id: 7, title: "Club Inauguration", category: "Launch", icon: Rocket, color: "from-emerald-400 to-teal-500" },
-  { id: 8, title: "To Be Continued ....", category: "Future", icon: MoreHorizontal, color: "from-gray-400 to-gray-600" },
+  { id: 1,  title: "Inauguration – Ascendrix", category: "Milestone",    icon: Sparkles,      color: "from-amber-400 to-yellow-500" },
+  { id: 2,  title: "Induction Day",             category: "Ceremony",    icon: GraduationCap, color: "from-blue-400 to-indigo-500" },
+  { id: 3,  title: "Freshers' Day / Onam",      category: "Celebration", icon: PartyPopper,   color: "from-orange-400 to-rose-500" },
+  { id: 4,  title: "Teachers' Day",             category: "Appreciation",icon: Heart,         color: "from-red-400 to-pink-500" },
+  { id: 5,  title: "Ignite – Talent Hunt",      category: "Talent Hunt", icon: Flame,         color: "from-orange-500 to-red-600" },
+  { id: 6,  title: "Club Inauguration",         category: "Launch",      icon: Rocket,        color: "from-emerald-400 to-teal-500" },
+  { id: 7,  title: "Pongal",                    category: "Festival",    icon: Sun,           color: "from-yellow-400 to-orange-500" },
+  { id: 8,  title: "Flash Mob",                 category: "Performance", icon: Zap,           color: "from-purple-500 to-indigo-600" },
+  { id: 9,  title: "Sports Day",                category: "Sports",      icon: Trophy,        color: "from-cyan-400 to-blue-500" },
+  { id: 10, title: "Culturals",                 category: "Fest",        icon: Music,         color: "from-fuchsia-500 to-pink-600" },
+  { id: 11, title: "Women's Day",               category: "Awareness",   icon: Venus,         color: "from-pink-400 to-rose-500" },
+  { id: 12, title: "College Day",               category: "Milestone",   icon: Award,         color: "from-amber-500 to-yellow-600" },
 ];
 
 export function UpcomingEvents() {
@@ -45,7 +49,7 @@ export function UpcomingEvents() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {events.map((event, index) => {
             const Icon = event.icon;
             return (

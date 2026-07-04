@@ -1,4 +1,5 @@
 import { Navbar } from "./components/navbar";
+import { GlitterCursor } from "./components/glitter-cursor";
 import { HeroSection } from "./components/hero-section";
 import { AboutSection } from "./components/about-section";
 import { CouncilMembers } from "./components/council-members";
@@ -11,7 +12,8 @@ import { Footer } from "./components/footer";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+    <div className="min-h-screen bg-black text-white overflow-x-hidden" style={{ cursor: "none" }}>
+      <GlitterCursor />
       {/* Mouse Follow Glow Effect */}
       <div
         className="pointer-events-none fixed inset-0 z-30 transition duration-300"

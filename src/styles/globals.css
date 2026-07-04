@@ -1,0 +1,4 @@
+/* Hide default cursor globally for the custom glitter cursor */
+*, *::before, *::after {
+  cursor: none !important;
+}
