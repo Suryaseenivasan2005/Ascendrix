@@ -14,7 +14,6 @@ const images = [
   { id: 7,  url: "/assets/IMG_8632.JPG.jpeg",            title: "Ascendrix 2025" },
   { id: 8,  url: "/assets/IMG_8901.JPG.jpeg",            title: "Ascendrix 2025" },
   { id: 9,  url: "/assets/IMG_9378.JPG.jpeg",            title: "Ascendrix 2025" },
-  { id: 10, url: "/assets/IMG_9434 (2).JPG.jpeg",        title: "Ascendrix 2025" },
 ];
 
 export function Gallery() {

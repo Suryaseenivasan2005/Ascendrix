@@ -176,12 +176,11 @@ export function Contact() {
 
               <div className="relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl overflow-hidden group-hover:border-[#D4AF37]/50 transition-all h-64">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.2799999999997!2d80.2!3d13.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDAwJzAwLjAiTiA4MMKwMTInMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=80.12593%2C12.86089%2C80.13293%2C12.86589&layer=mapnik&marker=12.8633878%2C80.1294316"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
                   title="Tagore Engineering College Location"
                 />
               </div>
