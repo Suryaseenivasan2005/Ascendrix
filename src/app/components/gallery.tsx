@@ -5,18 +5,16 @@ import { X } from "lucide-react";
 import Masonry from "react-responsive-masonry";
 
 const images = [
-  { id: 1, url: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop", title: "TechX Symposium" },
-  { id: 2, url: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&h=900&fit=crop", title: "Innovation Summit" },
-  { id: 3, url: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&h=600&fit=crop", title: "Cultural Fest" },
-  { id: 4, url: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=800&fit=crop", title: "AI Workshop" },
-  { id: 5, url: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop", title: "Hackathon" },
-  { id: 6, url: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&h=900&fit=crop", title: "Workshops" },
-  { id: 7, url: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&h=600&fit=crop", title: "Award Ceremony" },
-  { id: 8, url: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&h=800&fit=crop", title: "Team Building" },
-  { id: 9, url: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=800&h=600&fit=crop", title: "Symposium" },
-  { id: 10, url: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&h=900&fit=crop", title: "Celebrations" },
-  { id: 11, url: "https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?w=800&h=600&fit=crop", title: "Panel Discussion" },
-  { id: 12, url: "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&h=800&fit=crop", title: "Networking" },
+  { id: 1,  url: "/assets/IMG-20260705-WA0048.jpg.jpeg", title: "Ascendrix 2025" },
+  { id: 2,  url: "/assets/IMG_1150.JPG.jpeg",            title: "Ascendrix 2025" },
+  { id: 3,  url: "/assets/IMG_1812.JPG.jpeg",            title: "Ascendrix 2025" },
+  { id: 4,  url: "/assets/IMG_3459.JPG.jpeg",            title: "Ascendrix 2025" },
+  { id: 5,  url: "/assets/IMG_5750.JPG.jpeg",            title: "Ascendrix 2025" },
+  { id: 6,  url: "/assets/IMG_8276.JPG.jpeg",            title: "Ascendrix 2025" },
+  { id: 7,  url: "/assets/IMG_8632.JPG.jpeg",            title: "Ascendrix 2025" },
+  { id: 8,  url: "/assets/IMG_8901.JPG.jpeg",            title: "Ascendrix 2025" },
+  { id: 9,  url: "/assets/IMG_9378.JPG.jpeg",            title: "Ascendrix 2025" },
+  { id: 10, url: "/assets/IMG_9434 (2).JPG.jpeg",        title: "Ascendrix 2025" },
 ];
 
 export function Gallery() {
