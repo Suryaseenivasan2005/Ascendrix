@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { useInView } from "motion/react";
 import { useRef } from "react";
-import { Mail, Phone, MapPin, Instagram, Linkedin, Twitter, Facebook } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Twitter, Facebook, Globe } from "lucide-react";
 
 export function Contact() {
   const ref = useRef(null);
@@ -136,11 +136,18 @@ export function Contact() {
 
                   <div className="flex items-start gap-4">
                     <div className="p-3 bg-[#D4AF37]/20 rounded-xl">
-                      <Mail className="text-[#D4AF37]" size={20} />
+                      <Globe className="text-[#D4AF37]" size={20} />
                     </div>
                     <div>
-                      <div className="text-sm text-gray-400 mb-1">Email</div>
-                      <div className="text-white">ascendrix@tagoreengineering.edu</div>
+                      <div className="text-sm text-gray-400 mb-1">Website</div>
+                      <a
+                        href="https://tagore-engg.ac.in"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white hover:text-[#D4AF37] transition-colors"
+                      >
+                        tagore-engg.ac.in
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -150,14 +157,16 @@ export function Contact() {
                   <h4 className="text-white font-semibold mb-4">Follow Us</h4>
                   <div className="flex gap-3">
                     {[
-                      { icon: Instagram, href: "#" },
-                      { icon: Linkedin, href: "#" },
-                      { icon: Twitter, href: "#" },
-                      { icon: Facebook, href: "#" },
+                      { icon: Instagram, href: "https://instagram.com/tagoreengg_chn", label: "Instagram" },
+                      { icon: Twitter, href: "https://twitter.com/tagoreengg_chn", label: "Twitter" },
+                      { icon: Facebook, href: "https://facebook.com/tagoreengg.chn", label: "Facebook" },
                     ].map((social, index) => (
                       <motion.a
                         key={index}
                         href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={social.label}
                         whileHover={{ scale: 1.1, rotate: 5 }}
                         whileTap={{ scale: 0.9 }}
                         className="p-3 bg-white/5 border border-white/10 rounded-xl hover:bg-[#D4AF37]/20 hover:border-[#D4AF37]/50 transition-all"
