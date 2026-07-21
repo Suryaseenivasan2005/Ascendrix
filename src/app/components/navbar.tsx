@@ -8,8 +8,6 @@ export function Navbar() {
   const navItems = [
     "Home",
     "Council Members",
-    "Coordinators",
-    "Upcoming Events",
     "Event Reports",
     "Gallery",
     "Contact",

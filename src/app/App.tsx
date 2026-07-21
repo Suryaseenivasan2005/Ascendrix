@@ -3,7 +3,6 @@ import { GlitterCursor } from "./components/glitter-cursor";
 import { HeroSection } from "./components/hero-section";
 import { AboutSection } from "./components/about-section";
 import { CouncilMembers } from "./components/council-members";
-import { Coordinators } from "./components/coordinators";
 import { EventReports } from "./components/event-reports";
 import { Gallery } from "./components/gallery";
 import { Contact } from "./components/contact";
@@ -31,7 +30,6 @@ export default function App() {
       <HeroSection />
       <AboutSection />
       <CouncilMembers />
-      <Coordinators />
       <EventReports />
       <Gallery />
       <Contact />
