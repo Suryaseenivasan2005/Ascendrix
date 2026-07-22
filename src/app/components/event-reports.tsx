@@ -161,9 +161,8 @@ export function EventReports() {
                   initial={{ opacity: 0, y: 40 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: index * 0.1 }}
-                  className={`relative flex items-center ${
-                    index % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
-                  }`}
+                  className={`relative flex items-center ${index % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
+                    }`}
                 >
                   {/* Center Emblem/Icon */}
                   <div className="absolute left-8 md:left-1/2 w-10 h-10 bg-black rounded-full border border-[#D4AF37]/50 -translate-x-1/2 flex items-center justify-center z-10 shadow-[0_0_15px_rgba(212,175,55,0.25)]">
@@ -172,11 +171,10 @@ export function EventReports() {
 
                   {/* Card Container */}
                   <div
-                    className={`w-full md:w-1/2 ${
-                      index % 2 === 0
+                    className={`w-full md:w-1/2 ${index % 2 === 0
                         ? "md:pl-12 pl-20"
                         : "md:pr-12 pl-20 md:pl-0"
-                    }`}
+                      }`}
                   >
                     <motion.div
                       whileHover={{ y: -5, scale: 1.01 }}

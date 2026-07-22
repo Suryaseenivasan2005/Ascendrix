@@ -96,7 +96,7 @@ export function HeroSection() {
           className="flex gap-6 justify-center flex-wrap"
         >
           <motion.a
-            href="#upcoming-events"
+            href="#event-reports"
             whileHover={{ scale: 1.05, boxShadow: "0 0 40px rgba(212, 175, 55, 0.6)" }}
             whileTap={{ scale: 0.95 }}
             className="group px-8 py-4 bg-gradient-to-r from-[#D4AF37] to-[#7A0019] rounded-full text-white font-semibold flex items-center gap-2 shadow-lg shadow-[#D4AF37]/50"

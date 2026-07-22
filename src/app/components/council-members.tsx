@@ -307,7 +307,7 @@ export function CouncilMembers() {
               <div className="flex items-center gap-3 mb-10 border-b border-white/10 pb-4">
                 <div className="w-2.5 h-7 bg-gradient-to-b from-[#D4AF37] to-[#7A0019] rounded-full" />
                 <h3 className="text-3xl font-bold tracking-wide text-white">
-                  Office Bearers
+                  Office Bearers 2025
                 </h3>
               </div>
 
@@ -430,7 +430,7 @@ export function CouncilMembers() {
                   <div className="w-2.5 h-7 bg-gradient-to-b from-[#D4AF37] to-[#7A0019] rounded-full" />
                   <div>
                     <h3 className="text-3xl font-bold tracking-wide text-white">
-                      Ascendrix Assembly
+                      Ascendrix Assembly 2025
                     </h3>
                     <p className="text-sm text-gray-400 mt-1">
                       Our extensive crew of student representatives supporting execution and collaboration.
@@ -443,8 +443,8 @@ export function CouncilMembers() {
                   <button
                     onClick={() => setActiveTab("executive")}
                     className={`relative px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${activeTab === "executive"
-                        ? "bg-gradient-to-r from-[#D4AF37] to-[#7A0019] text-white shadow"
-                        : "text-gray-400 hover:text-white"
+                      ? "bg-gradient-to-r from-[#D4AF37] to-[#7A0019] text-white shadow"
+                      : "text-gray-400 hover:text-white"
                       }`}
                   >
                     Executive Members ({executiveMembers.length})
@@ -452,8 +452,8 @@ export function CouncilMembers() {
                   <button
                     onClick={() => setActiveTab("joint")}
                     className={`relative px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${activeTab === "joint"
-                        ? "bg-gradient-to-r from-[#D4AF37] to-[#7A0019] text-white shadow"
-                        : "text-gray-400 hover:text-white"
+                      ? "bg-gradient-to-r from-[#D4AF37] to-[#7A0019] text-white shadow"
+                      : "text-gray-400 hover:text-white"
                       }`}
                   >
                     Joint Members ({jointMembers.length})
