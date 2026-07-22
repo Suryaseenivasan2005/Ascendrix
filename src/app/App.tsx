@@ -35,7 +35,14 @@ export default function App() {
 
   const handleLaunchComplete = useCallback(() => {
     // Small delay so overlay exit animation finishes cleanly
-    setTimeout(() => setLaunched(true), ENTRANCE_DELAY * 1000);
+    setTimeout(() => {
+      // Force scroll to top and clear any hash so we always start at the Hero section
+      window.scrollTo(0, 0);
+      if (window.location.hash) {
+        window.history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+      setLaunched(true);
+    }, ENTRANCE_DELAY * 1000);
   }, []);
 
   return (

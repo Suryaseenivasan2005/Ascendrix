@@ -33,10 +33,9 @@ export function AboutSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const stats = [
-    { icon: Calendar, label: "Events Conducted", value: 150 },
-    { icon: Users, label: "Student Participants", value: 5000 },
-    { icon: Trophy, label: "Clubs Coordinated", value: 25 },
-    { icon: Award, label: "Achievements", value: 50 },
+    { icon: Calendar, label: "Events Conducted", value: 15 },
+    { icon: Trophy, label: "Clubs Coordinated", value: 12 },
+    { icon: Users, label: "Student Participants", value: 1000 },
   ];
 
   return (
@@ -128,7 +127,7 @@ export function AboutSection() {
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="grid grid-cols-2 gap-6"
+            className="grid grid-cols-2 justify-items-center gap-6"
           >
             {stats.map((stat, index) => (
               <motion.div
@@ -137,15 +136,15 @@ export function AboutSection() {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ scale: 1.05, rotateY: 5 }}
-                className="relative group"
+                className={`relative group w-48 md:w-56 aspect-square ${index === 2 ? "col-span-2" : ""}`}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/20 to-[#7A0019]/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
-                <div className="relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6 group-hover:border-[#D4AF37]/50 transition-all">
-                  <stat.icon className="text-[#D4AF37] mb-4" size={36} />
-                  <div className="text-4xl font-bold text-white mb-2">
+                <div className="relative h-full flex flex-col items-center justify-center text-center backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-6 group-hover:border-[#D4AF37]/50 transition-all">
+                  <stat.icon className="text-[#D4AF37] mb-6" size={48} />
+                  <div className="text-5xl md:text-6xl font-bold text-white mb-3">
                     <AnimatedCounter end={stat.value} />
                   </div>
-                  <div className="text-sm text-gray-400">{stat.label}</div>
+                  <div className="text-base md:text-lg font-medium text-gray-400">{stat.label}</div>
                 </div>
               </motion.div>
             ))}
