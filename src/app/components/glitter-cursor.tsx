@@ -185,7 +185,9 @@ export function GlitterCursor() {
   return (
     <canvas
       ref={canvasRef}
-      className="pointer-events-none fixed inset-0 z-[9999]"
+      // z-[999999] — must be above the launch overlay (z-99999) so the
+      // custom cursor ring/dot is always visible regardless of what's on screen
+      className="pointer-events-none fixed inset-0 z-[999999]"
       style={{ mixBlendMode: "screen" }}
     />
   );

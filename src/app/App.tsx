@@ -1,3 +1,16 @@
+/**
+ * App.tsx
+ * -------
+ * Root component.
+ * Renders the LaunchOverlay on first load. Once the overlay completes,
+ * the homepage content slides up with staggered entrance animations.
+ *
+ * ✏️ CUSTOMISE — To skip the overlay during development, set
+ *   const SKIP_LAUNCH = true;
+ */
+
+import { useState, useCallback } from "react";
+import { motion } from "motion/react";
 import { Navbar } from "./components/navbar";
 import { GlitterCursor } from "./components/glitter-cursor";
 import { HeroSection } from "./components/hero-section";
@@ -7,11 +20,31 @@ import { EventReports } from "./components/event-reports";
 import { Gallery } from "./components/gallery";
 import { Contact } from "./components/contact";
 import { Footer } from "./components/footer";
+import { LaunchOverlay } from "./components/launch-overlay";
+
+/* ✏️ CUSTOMISE — Set to true to bypass the overlay while developing */
+const SKIP_LAUNCH = false;
+
+/* ✏️ CUSTOMISE — Animation durations for homepage entrance (seconds) */
+const ENTRANCE_DURATION = 0.7;
+const ENTRANCE_STAGGER = 0.1;
+const ENTRANCE_DELAY = 0.05; // Extra delay after overlay removed
 
 export default function App() {
+  const [launched, setLaunched] = useState(SKIP_LAUNCH);
+
+  const handleLaunchComplete = useCallback(() => {
+    // Small delay so overlay exit animation finishes cleanly
+    setTimeout(() => setLaunched(true), ENTRANCE_DELAY * 1000);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-black text-white overflow-x-hidden" style={{ cursor: "none" }}>
+    <div
+      className="min-h-screen bg-black text-white overflow-x-hidden"
+      style={{ cursor: "none" }}
+    >
       <GlitterCursor />
+
       {/* Mouse Follow Glow Effect */}
       <div
         className="pointer-events-none fixed inset-0 z-30 transition duration-300"
@@ -26,14 +59,44 @@ export default function App() {
         }}
       />
 
-      <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <CouncilMembers />
-      <EventReports />
-      <Gallery />
-      <Contact />
-      <Footer />
+      {/* ── Launch Overlay ─────────────────────────────────────────────────── */}
+      {!SKIP_LAUNCH && (
+        <LaunchOverlay onComplete={handleLaunchComplete} />
+      )}
+
+      {/* ── Homepage Content ────────────────────────────────────────────────── */}
+      {/*
+        When launched === false, the content is rendered but invisible via
+        opacity:0 so the browser has time to paint it before the overlay lifts.
+        Once launched, each section animates in with a staggered upward motion.
+      */}
+      {[
+        { el: <Navbar />,        key: "nav" },
+        { el: <HeroSection />,   key: "hero" },
+        { el: <AboutSection />,  key: "about" },
+        { el: <CouncilMembers />, key: "council" },
+        { el: <EventReports />,  key: "events" },
+        { el: <Gallery />,       key: "gallery" },
+        { el: <Contact />,       key: "contact" },
+        { el: <Footer />,        key: "footer" },
+      ].map(({ el, key }, index) => (
+        <motion.div
+          key={key}
+          initial={SKIP_LAUNCH ? false : { opacity: 0, y: 24 }}
+          animate={
+            launched
+              ? { opacity: 1, y: 0 }
+              : { opacity: 0, y: 24 }
+          }
+          transition={{
+            duration: ENTRANCE_DURATION,
+            ease: [0.22, 1, 0.36, 1], // Custom ease-out-quart
+            delay: launched ? index * ENTRANCE_STAGGER : 0,
+          }}
+        >
+          {el}
+        </motion.div>
+      ))}
     </div>
   );
 }
