@@ -23,7 +23,7 @@ import { Footer } from "./components/footer";
 import { LaunchOverlay } from "./components/launch-overlay";
 
 /* ✏️ CUSTOMISE — Set to true to bypass the overlay while developing */
-const SKIP_LAUNCH = false;
+const SKIP_LAUNCH = true;
 
 /* ✏️ CUSTOMISE — Animation durations for homepage entrance (seconds) */
 const ENTRANCE_DURATION = 0.7;
