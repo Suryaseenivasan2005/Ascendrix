@@ -165,20 +165,54 @@ export function CouncilMembers() {
     const initials = getInitials(member.name);
     const grad = getRoleGradient(member.role);
     const icon = getRoleIcon(member.role);
+    const isTarget = member.name === "Tharun Raj H";
+    const [isCracked, setIsCracked] = useState(false);
+
+    const handleClick = () => {
+      if (isTarget && !isCracked) {
+        setIsCracked(true);
+        setTimeout(() => setIsCracked(false), 3000);
+      }
+    };
 
     return (
       <motion.div
         initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: Math.min(index * 0.05, 0.4) }}
-        whileHover={{ y: -6, scale: 1.02 }}
-        className="group relative"
+        animate={isCracked ? { x: [-4, 4, -4, 4, 0], opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
+        transition={isCracked ? { duration: 0.3 } : { delay: Math.min(index * 0.05, 0.4) }}
+        whileHover={isCracked ? undefined : { y: -6, scale: 1.02 }}
+        className={`group relative ${isTarget ? "cursor-pointer" : ""}`}
+        onClick={handleClick}
       >
         {/* Glow Effect */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/15 to-[#7A0019]/15 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
         {/* Card Border glow */}
-        <div className="relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-[#D4AF37]/40 transition-all duration-300 flex items-center gap-4">
+        <div className={`relative backdrop-blur-xl bg-white/5 border rounded-2xl p-5 transition-all duration-300 flex items-center gap-4 overflow-hidden ${isCracked ? "border-white/40 bg-white/10" : "border-white/10 hover:border-[#D4AF37]/40"}`}>
+
+          {/* Glass Crack Overlay */}
+          <AnimatePresence>
+            {isCracked && (
+              <motion.div
+                initial={{ opacity: 0, scale: 1.1 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, transition: { duration: 0.6 } }}
+                className="absolute inset-0 z-50 pointer-events-none flex items-center justify-center backdrop-blur-sm"
+              >
+                {/* SVG Crack Pattern */}
+                <svg viewBox="0 0 100 100" className="w-full h-full opacity-80 drop-shadow-md" preserveAspectRatio="none">
+                  {/* Main cracks */}
+                  <path d="M50,50 L20,0 M50,50 L80,0 M50,50 L100,30 M50,50 L100,70 M50,50 L70,100 M50,50 L30,100 M50,50 L0,60 M50,50 L0,20 M20,0 L35,25 L50,50 M80,0 L65,30 L50,50 M100,30 L75,45 L50,50 M100,70 L65,60 L50,50 M70,100 L55,70 L50,50 M30,100 L40,65 L50,50 M0,60 L25,55 L50,50 M0,20 L30,35 L50,50" stroke="rgba(255,255,255,0.8)" strokeWidth="0.6" fill="none" />
+                  {/* Shattered pieces highlights */}
+                  <path d="M50,50 L40,20 L30,40 Z M50,50 L60,30 L70,45 Z M50,50 L70,70 L55,80 Z M50,50 L30,70 L20,55 Z" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.5)" strokeWidth="0.2"/>
+                  {/* Additional web cracks */}
+                  <path d="M40,20 L65,30 M75,45 L65,60 M55,70 L40,65 M25,55 L30,35" stroke="rgba(255,255,255,0.5)" strokeWidth="0.3" fill="none" />
+                </svg>
+                {/* Frosty overlay to enhance glass look */}
+                <div className="absolute inset-0 bg-white/10 mix-blend-overlay" />
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           {/* Avatar Monogram */}
           <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${grad} flex flex-col items-center justify-center font-bold text-lg relative overflow-hidden group-hover:scale-105 transition-transform duration-300 shadow-inner`}>
