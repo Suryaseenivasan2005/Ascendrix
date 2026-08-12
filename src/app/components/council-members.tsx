@@ -13,69 +13,67 @@ import {
   Sparkles,
   Users,
   UserCheck,
-  ChevronRight
+  ChevronRight,
+  Coins,
+  Flag
 } from "lucide-react";
 
 // Real Student Council Members data - Office Bearers / Core
 const officeBearers = [
-  { name: "Pushpavel K", role: "President" },
-  { name: "Jiji Dharshini G", role: "Vice-President" },
-  { name: "Gokul R", role: "General Secretary" },
-  { name: "Nivetha Lakshmi V", role: "General Secretary" },
-  { name: "Roshini P", role: "Joint Secretary" },
-  { name: "Mehul Kumar C.B", role: "Cultural Secretary" },
-  { name: "Nabila S", role: "Cultural Secretary" },
-  { name: "Mithilesh K", role: "Cultural Secretary" },
-  { name: "Shalini N", role: "Cultural Secretary" },
-  { name: "Delwin D", role: "Sports Secretary" },
-  { name: "Ashlin Jeba Reeja J", role: "Sports Secretary" },
-  { name: "Venkatesh N", role: "Joint-Sports Secretary" },
-  { name: "Ranjika B", role: "Joint-Sports Secretary" },
+  { name: "Dharun S", role: "President", dept: "AI&DS", team: "OVERVIEW" },
+  { name: "Ranjika B", role: "Vice President", dept: "CSE", team: "OVERVIEW" },
+  { name: "Praveen Karthik R", role: "General Secretary", dept: "AI&DS", team: "OVERVIEW" },
+  { name: "Gomathi E S", role: "Joint Secretary", dept: "ECE", team: "MEDIA" },
+  { name: "Gokul R", role: "Cultural Secretary", dept: "IT", team: "OVERVIEW" },
+  { name: "Roshni P", role: "Cultural Secretary", dept: "ECE", team: "STAGE & RECEPTION" },
+  { name: "Ranjith Kumar P", role: "Cultural Secretary", dept: "ECE", team: "MEDIA" },
+  { name: "Yoshetha A", role: "Cultural Secretary", dept: "IT", team: "MC" },
+  { name: "Bharathi Mohan M", role: "Treasurer", dept: "CSE", team: "DEC - OVERVIEW" },
+  { name: "Nithyashree T", role: "Treasurer", dept: "ECE", team: "EO - OVERVIEW" },
+  { name: "Jaasmine R", role: "Club Head", dept: "CSE", team: "CLUB & MC" },
+  { name: "Sharath S", role: "Club Head", dept: "IT", team: "CLUB & TECHNICAL" },
+  { name: "Kishore S", role: "Sports Secretary (Men)", dept: "CSE - B", team: "SPORTS" },
+  { name: "Puspalatha G", role: "Sports Secretary (Women)", dept: "CSE - B", team: "SPORTS" },
 ];
 
-// Executive Members (21)
+// Executive Members (36)
 const executiveMembers = [
-  { name: "Haris M", role: "Executive Member" },
-  { name: "Dharun S", role: "Executive Member" },
-  { name: "Nithish Kumar V", role: "Executive Member" },
-  { name: "Krithisha E V", role: "Executive Member" },
-  { name: "Ajay V", role: "Executive Member" },
-  { name: "Iniyavan M", role: "Executive Member" },
-  { name: "Lokesh S", role: "Executive Member" },
-  { name: "Vasanthan N", role: "Executive Member" },
-  { name: "Arjun P", role: "Executive Member" },
-  { name: "Praveen N", role: "Executive Member" },
-  { name: "Kathiraven V", role: "Executive Member" },
-  { name: "Ranjit Kumar P", role: "Executive Member" },
-  { name: "Senthamizh Selvan K", role: "Executive Member" },
-  { name: "Santhiya R", role: "Executive Member" },
-  { name: "Archana B", role: "Executive Member" },
-  { name: "Shrilekha S", role: "Executive Member" },
-  { name: "Adithya B", role: "Executive Member" },
-  { name: "Varshitha S", role: "Executive Member" },
-  { name: "Sakthi Narayanan K", role: "Executive Member" },
-  { name: "Senbaga S", role: "Executive Member" },
-  { name: "Gunal S", role: "Executive Member" },
-];
-
-// Joint Members (16)
-const jointMembers = [
-  { name: "Neha K", role: "Joint Member" },
-  { name: "Bhavani U", role: "Joint Member" },
-  { name: "Yoshethaa A", role: "Joint Member" },
-  { name: "Sanjana Sree M", role: "Joint Member" },
-  { name: "Gomathi E S", role: "Joint Member" },
-  { name: "Yokesh B K", role: "Joint Member" },
-  { name: "Sri Sadha S", role: "Joint Member" },
-  { name: "Naveen R P", role: "Joint Member" },
-  { name: "Keerthikanthan G K", role: "Joint Member" },
-  { name: "Praveen Karthik R", role: "Joint Member" },
-  { name: "Selva Maruthi P", role: "Joint Member" },
-  { name: "Hellen Arsha D", role: "Joint Member" },
-  { name: "Harish Pavan A", role: "Joint Member" },
-  { name: "Ayushyaman Kumar", role: "Joint Member" },
-  { name: "Neha R", role: "Joint Member" },
-  { name: "Dhiya R", role: "Joint Member" },
+  { name: "Dhiya R", role: "Executive Member", dept: "AERO", team: "ORGANIZING" },
+  { name: "Saranya Sri Valli D", role: "Executive Member", dept: "AI&DS", team: "DECORATION" },
+  { name: "Deepak K", role: "Executive Member", dept: "AI&DS", team: "TECHNICAL" },
+  { name: "Abinaya Shree C", role: "Executive Member", dept: "CSE - A", team: "ORGANIZING" },
+  { name: "Thilak Kumar J", role: "Executive Member", dept: "CSE - B", team: "TECHNICAL" },
+  { name: "Yazhini N", role: "Executive Member", dept: "CSE - B", team: "MC" },
+  { name: "Nithyasree A", role: "Executive Member", dept: "CSE - B", team: "ORGANIZING" },
+  { name: "Perarasu S", role: "Executive Member", dept: "CYBER SECURITY", team: "ORGANIZING" },
+  { name: "Pushpa V", role: "Executive Member", dept: "CYBER SECURITY", team: "ORGANIZING" },
+  { name: "Salman Faris A", role: "Executive Member", dept: "ECE", team: "DECORATION" },
+  { name: "Naveen R P", role: "Executive Member", dept: "ECE", team: "DECORATION" },
+  { name: "Bharath Raj R", role: "Executive Member", dept: "IT", team: "ORGANIZING" },
+  { name: "Senthamih Selvan K", role: "Executive Member", dept: "IT", team: "MEDIA" },
+  { name: "Bhavani U", role: "Executive Member", dept: "MECH", team: "DECORATION" },
+  { name: "Tharun Raj H", role: "Executive Member", dept: "MECH", team: "DECORATION" },
+  { name: "Sakthi Narayana K", role: "Executive Member", dept: "AERO", team: "ORGANIZING" },
+  { name: "Janani S", role: "Executive Member", dept: "AI&DS", team: "ORGANIZING" },
+  { name: "Shrilekha S", role: "Executive Member", dept: "IT", team: "ORGANIZING" },
+  { name: "Dhanushia K", role: "Executive Member", dept: "MBA", team: "ORGANIZING" },
+  { name: "Varshitha S", role: "Executive Member", dept: "MBA", team: "ORGANIZING" },
+  { name: "Kathiravan L", role: "Executive Member", dept: "AERO", team: "DECORATION" },
+  { name: "Abdul Afsar M", role: "Executive Member", dept: "AI&DS", team: "MEDIA" },
+  { name: "Santosh N", role: "Executive Member", dept: "AI&DS", team: "MEDIA" },
+  { name: "Swathi K", role: "Executive Member", dept: "AI&DS", team: "ORGANIZING" },
+  { name: "Krishnaraja D", role: "Executive Member", dept: "CSE - A", team: "DECORATION" },
+  { name: "Deva Dharshini R", role: "Executive Member", dept: "CSE - A", team: "ORGANIZING" },
+  { name: "Nitish S", role: "Executive Member", dept: "CSE - B", team: "DECORATION" },
+  { name: "Yhamini M", role: "Executive Member", dept: "CSE - B", team: "DECORATION" },
+  { name: "Prince Immanuel M", role: "Executive Member", dept: "CYBER SECURITY", team: "MEDIA" },
+  { name: "Vinotha M", role: "Executive Member", dept: "CYBER SECURITY", team: "DECORATION" },
+  { name: "Lok Bharath R", role: "Executive Member", dept: "CYBER SECURITY", team: "MEDIA" },
+  { name: "Baskaran R", role: "Executive Member", dept: "ECE", team: "DECORATION" },
+  { name: "Charumathi T K", role: "Executive Member", dept: "ECE", team: "MC" },
+  { name: "Jegadeeswari A", role: "Executive Member", dept: "IT", team: "ORGANIZING" },
+  { name: "Varshan A", role: "Executive Member", dept: "IT", team: "MEDIA" },
+  { name: "Yoga Prajeeth S", role: "Executive Member", dept: "MECH", team: "ORGANIZING" }
 ];
 
 // Get initials of a student
@@ -96,7 +94,7 @@ const getRoleGradient = (role: string) => {
   if (r === "president") {
     return "from-[#D4AF37] via-[#FFD700] to-[#AA7C11] text-black shadow-[0_0_20px_rgba(212,175,55,0.4)]";
   }
-  if (r === "vice-president") {
+  if (r === "vice president" || r === "vice-president") {
     return "from-[#D4AF37]/80 via-yellow-200 to-[#AA7C11]/80 text-black shadow-[0_0_15px_rgba(212,175,55,0.25)]";
   }
   if (r.includes("general secretary")) {
@@ -111,8 +109,11 @@ const getRoleGradient = (role: string) => {
   if (r.includes("sports secretary")) {
     return "from-emerald-600 via-teal-500 to-cyan-700 text-white shadow-[0_0_15px_rgba(16,185,129,0.3)]";
   }
-  if (r.includes("joint-sports secretary")) {
-    return "from-teal-600 via-emerald-500 to-green-700 text-white shadow-[0_0_10px_rgba(20,184,166,0.2)]";
+  if (r.includes("treasurer")) {
+    return "from-amber-600 via-orange-500 to-red-700 text-white shadow-[0_0_15px_rgba(245,158,11,0.3)]";
+  }
+  if (r.includes("club head")) {
+    return "from-fuchsia-600 via-pink-500 to-rose-700 text-white shadow-[0_0_15px_rgba(217,70,239,0.3)]";
   }
   if (r.includes("executive")) {
     return "from-blue-600 via-cyan-500 to-indigo-700 text-white";
@@ -124,12 +125,13 @@ const getRoleGradient = (role: string) => {
 const getRoleIcon = (role: string) => {
   const r = role.toLowerCase();
   if (r === "president") return <Shield className="w-5 h-5 text-[#D4AF37]" />;
-  if (r === "vice-president") return <Award className="w-5 h-5 text-amber-300" />;
+  if (r === "vice president" || r === "vice-president") return <Award className="w-5 h-5 text-amber-300" />;
   if (r.includes("general secretary")) return <Scroll className="w-5 h-5 text-rose-400" />;
   if (r.includes("joint secretary")) return <Layers className="w-5 h-5 text-pink-400" />;
   if (r.includes("cultural")) return <Palette className="w-5 h-5 text-purple-400" />;
   if (r.includes("sports secretary")) return <Trophy className="w-5 h-5 text-emerald-400" />;
-  if (r.includes("joint-sports")) return <Activity className="w-5 h-5 text-teal-400" />;
+  if (r.includes("treasurer")) return <Coins className="w-5 h-5 text-orange-400" />;
+  if (r.includes("club head")) return <Flag className="w-5 h-5 text-pink-400" />;
   return <UserCheck className="w-5 h-5 text-cyan-400" />;
 };
 
@@ -137,29 +139,26 @@ export function CouncilMembers() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [searchTerm, setSearchTerm] = useState("");
-  const [activeTab, setActiveTab] = useState<"executive" | "joint">("executive");
 
   // Search filter lists
   const filteredOffice = officeBearers.filter(
     (m) =>
       m.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      m.role.toLowerCase().includes(searchTerm.toLowerCase())
+      m.role.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      m.dept?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      m.team?.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const filteredExecutive = executiveMembers.filter(
     (m) =>
       m.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      m.role.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
-  const filteredJoint = jointMembers.filter(
-    (m) =>
-      m.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      m.role.toLowerCase().includes(searchTerm.toLowerCase())
+      m.role.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      m.dept?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      m.team?.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const isSearching = searchTerm.trim().length > 0;
-  const hasResults = filteredOffice.length > 0 || filteredExecutive.length > 0 || filteredJoint.length > 0;
+  const hasResults = filteredOffice.length > 0 || filteredExecutive.length > 0;
 
   // Render a member card
   const MemberCard = ({ member, index, showGroup = false }: { member: any; index: number; showGroup?: boolean }) => {
@@ -198,11 +197,23 @@ export function CouncilMembers() {
             <h3 className="text-lg font-bold text-white group-hover:text-amber-300 transition-colors truncate">
               {member.name}
             </h3>
-            {showGroup && (
-              <span className="inline-block mt-1 text-[10px] bg-white/10 px-2 py-0.5 rounded text-gray-300 font-medium">
-                {member.role.includes("Executive") ? "Executive Team" : member.role.includes("Joint") ? "Joint Team" : "Core Team"}
-              </span>
-            )}
+            <div className="flex flex-wrap gap-1.5 mt-1">
+              {showGroup && (
+                <span className="inline-block text-[10px] bg-white/10 px-2 py-0.5 rounded text-gray-300 font-medium">
+                  {member.role.includes("Executive") ? "Executive Team" : "Core Team"}
+                </span>
+              )}
+              {member.dept && (
+                <span className="inline-block text-[10px] bg-[#D4AF37]/20 border border-[#D4AF37]/30 px-2 py-0.5 rounded text-[#D4AF37] font-medium">
+                  {member.dept}
+                </span>
+              )}
+              {member.team && (
+                <span className="inline-block text-[10px] bg-[#7A0019]/20 border border-[#7A0019]/30 px-2 py-0.5 rounded text-rose-300 font-medium">
+                  {member.team}
+                </span>
+              )}
+            </div>
           </div>
         </div>
       </motion.div>
@@ -233,7 +244,7 @@ export function CouncilMembers() {
           </div>
           <h2 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
             <span className="bg-gradient-to-r from-[#D4AF37] via-white to-[#D4AF37] bg-clip-text text-transparent">
-              Ascendrix Members
+              Ascendrix 2.0 Members
             </span>
           </h2>
           <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
@@ -268,7 +279,7 @@ export function CouncilMembers() {
           <div>
             <h3 className="text-2xl font-semibold text-white mb-6 flex items-center gap-2 border-b border-white/10 pb-3">
               <Users size={20} className="text-[#D4AF37]" />
-              Search Results ({filteredOffice.length + filteredExecutive.length + filteredJoint.length})
+              Search Results ({filteredOffice.length + filteredExecutive.length})
             </h3>
             {hasResults ? (
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -277,9 +288,6 @@ export function CouncilMembers() {
                 ))}
                 {filteredExecutive.map((m, idx) => (
                   <MemberCard key={`search-exec-${m.name}`} member={m} index={idx + filteredOffice.length} showGroup />
-                ))}
-                {filteredJoint.map((m, idx) => (
-                  <MemberCard key={`search-joint-${m.name}`} member={m} index={idx + filteredOffice.length + filteredExecutive.length} showGroup />
                 ))}
               </div>
             ) : (
@@ -307,7 +315,7 @@ export function CouncilMembers() {
               <div className="flex items-center gap-3 mb-10 border-b border-white/10 pb-4">
                 <div className="w-2.5 h-7 bg-gradient-to-b from-[#D4AF37] to-[#7A0019] rounded-full" />
                 <h3 className="text-3xl font-bold tracking-wide text-white">
-                  Office Bearers 2025
+                  Ascendrix 2.0 Office Bearers
                 </h3>
               </div>
 
@@ -344,9 +352,21 @@ export function CouncilMembers() {
                         <h4 className="text-2xl font-black text-white group-hover:text-amber-300 transition-colors">
                           {m.name}
                         </h4>
-                        <div className="mt-2 text-xs text-gray-400 flex items-center gap-1.5">
-                          <span className="inline-block w-1.5 h-1.5 bg-green-500 rounded-full" />
-                          Core Council Executive
+                        <div className="flex flex-wrap gap-1.5 mt-2">
+                          <div className="text-[10px] text-gray-400 flex items-center gap-1.5 bg-black/20 px-2 py-0.5 rounded-full">
+                            <span className="inline-block w-1.5 h-1.5 bg-green-500 rounded-full" />
+                            Core Executive
+                          </div>
+                          {m.dept && (
+                            <span className="inline-block text-[10px] bg-[#D4AF37]/20 border border-[#D4AF37]/30 px-2 py-0.5 rounded-full text-[#D4AF37] font-medium">
+                              {m.dept}
+                            </span>
+                          )}
+                          {m.team && (
+                            <span className="inline-block text-[10px] bg-[#7A0019]/20 border border-[#7A0019]/30 px-2 py-0.5 rounded-full text-rose-300 font-medium">
+                              {m.team}
+                            </span>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -355,8 +375,8 @@ export function CouncilMembers() {
               </div>
 
               {/* Tier 2: General & Joint Secretaries */}
-              <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
-                {officeBearers.slice(2, 5).map((m, idx) => (
+              <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
+                {officeBearers.slice(2, 4).map((m, idx) => (
                   <motion.div
                     key={m.name}
                     initial={{ opacity: 0, y: 20 }}
@@ -383,15 +403,27 @@ export function CouncilMembers() {
                         <h4 className="text-lg font-bold text-white group-hover:text-rose-300 transition-colors truncate">
                           {m.name}
                         </h4>
+                        <div className="flex flex-wrap gap-1 mt-1">
+                          {m.dept && (
+                            <span className="inline-block text-[9px] bg-[#D4AF37]/20 border border-[#D4AF37]/30 px-1.5 py-0.5 rounded text-[#D4AF37] font-medium">
+                              {m.dept}
+                            </span>
+                          )}
+                          {m.team && (
+                            <span className="inline-block text-[9px] bg-[#7A0019]/20 border border-[#7A0019]/30 px-1.5 py-0.5 rounded text-rose-300 font-medium">
+                              {m.team}
+                            </span>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </motion.div>
                 ))}
               </div>
 
-              {/* Tier 3: Cultural & Sports Coordinators */}
+              {/* Tier 3: Cultural, Sports, Treasurers & Club Heads */}
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {officeBearers.slice(5).map((m, idx) => (
+                {officeBearers.slice(4).map((m, idx) => (
                   <motion.div
                     key={m.name}
                     initial={{ opacity: 0, y: 20 }}
@@ -414,6 +446,18 @@ export function CouncilMembers() {
                         <h4 className="text-base font-bold text-white truncate">
                           {m.name}
                         </h4>
+                        <div className="flex flex-wrap gap-1 mt-1">
+                          {m.dept && (
+                            <span className="inline-block text-[8px] bg-[#D4AF37]/20 border border-[#D4AF37]/30 px-1.5 py-0.5 rounded text-[#D4AF37] font-medium">
+                              {m.dept}
+                            </span>
+                          )}
+                          {m.team && (
+                            <span className="inline-block text-[8px] bg-[#7A0019]/20 border border-[#7A0019]/30 px-1.5 py-0.5 rounded text-rose-300 font-medium">
+                              {m.team}
+                            </span>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </motion.div>
@@ -421,7 +465,7 @@ export function CouncilMembers() {
               </div>
             </div>
 
-            {/* 2. Executive & Joint Members Section (Tabbed view) */}
+            {/* 2. Executive Members Section */}
             <div className="pt-8">
 
               {/* Heading and switcher */}
@@ -430,7 +474,7 @@ export function CouncilMembers() {
                   <div className="w-2.5 h-7 bg-gradient-to-b from-[#D4AF37] to-[#7A0019] rounded-full" />
                   <div>
                     <h3 className="text-3xl font-bold tracking-wide text-white">
-                      Ascendrix Assembly 2025
+                      Ascendrix 2.0 Assembly
                     </h3>
                     <p className="text-sm text-gray-400 mt-1">
                       Our extensive crew of student representatives supporting execution and collaboration.
@@ -440,51 +484,24 @@ export function CouncilMembers() {
 
                 {/* Switcher Pill */}
                 <div className="flex bg-white/5 border border-white/10 rounded-full p-1 self-stretch md:self-auto shadow-inner">
-                  <button
-                    onClick={() => setActiveTab("executive")}
-                    className={`relative px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${activeTab === "executive"
-                      ? "bg-gradient-to-r from-[#D4AF37] to-[#7A0019] text-white shadow"
-                      : "text-gray-400 hover:text-white"
-                      }`}
-                  >
+                  <div className="relative px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all bg-gradient-to-r from-[#D4AF37] to-[#7A0019] text-white shadow">
                     Executive Members ({executiveMembers.length})
-                  </button>
-                  <button
-                    onClick={() => setActiveTab("joint")}
-                    className={`relative px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all ${activeTab === "joint"
-                      ? "bg-gradient-to-r from-[#D4AF37] to-[#7A0019] text-white shadow"
-                      : "text-gray-400 hover:text-white"
-                      }`}
-                  >
-                    Joint Members ({jointMembers.length})
-                  </button>
+                  </div>
                 </div>
               </div>
 
               {/* Tab Content */}
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeTab}
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -15 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  {activeTab === "executive" ? (
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                      {executiveMembers.map((m, idx) => (
-                        <MemberCard key={`exec-${m.name}`} member={m} index={idx} />
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                      {jointMembers.map((m, idx) => (
-                        <MemberCard key={`joint-${m.name}`} member={m} index={idx} />
-                      ))}
-                    </div>
-                  )}
-                </motion.div>
-              </AnimatePresence>
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {executiveMembers.map((m, idx) => (
+                    <MemberCard key={`exec-${m.name}`} member={m} index={idx} />
+                  ))}
+                </div>
+              </motion.div>
             </div>
           </div>
         )}
