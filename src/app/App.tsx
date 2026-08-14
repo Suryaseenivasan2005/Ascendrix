@@ -16,6 +16,7 @@ import { GlitterCursor } from "./components/glitter-cursor";
 import { HeroSection } from "./components/hero-section";
 import { AboutSection } from "./components/about-section";
 import { CouncilMembers } from "./components/council-members";
+import type { Batch } from "./components/council-members";
 import { EventReports } from "./components/event-reports";
 import { Gallery } from "./components/gallery";
 import { Contact } from "./components/contact";
@@ -32,6 +33,8 @@ const ENTRANCE_DELAY = 0.05; // Extra delay after overlay removed
 
 export default function App() {
   const [launched, setLaunched] = useState(SKIP_LAUNCH);
+  /** Shared batch selection — drives CouncilMembers, EventReports & Gallery */
+  const [selectedBatch, setSelectedBatch] = useState<Batch>("2026-2027");
 
   const handleLaunchComplete = useCallback(() => {
     // Small delay so overlay exit animation finishes cleanly
@@ -39,11 +42,22 @@ export default function App() {
       // Force scroll to top and clear any hash so we always start at the Hero section
       window.scrollTo(0, 0);
       if (window.location.hash) {
-        window.history.replaceState(null, '', window.location.pathname + window.location.search);
+        window.history.replaceState(null, "", window.location.pathname + window.location.search);
       }
       setLaunched(true);
     }, ENTRANCE_DELAY * 1000);
   }, []);
+
+  const sections = [
+    { el: <Navbar />,                                                            key: "nav"     },
+    { el: <HeroSection />,                                                       key: "hero"    },
+    { el: <AboutSection />,                                                      key: "about"   },
+    { el: <CouncilMembers selectedBatch={selectedBatch} onBatchChange={setSelectedBatch} />, key: "council" },
+    { el: <EventReports selectedBatch={selectedBatch} />,                        key: "events"  },
+    { el: <Gallery selectedBatch={selectedBatch} />,                             key: "gallery" },
+    { el: <Contact />,                                                           key: "contact" },
+    { el: <Footer />,                                                            key: "footer"  },
+  ];
 
   return (
     <div
@@ -77,16 +91,7 @@ export default function App() {
         opacity:0 so the browser has time to paint it before the overlay lifts.
         Once launched, each section animates in with a staggered upward motion.
       */}
-      {[
-        { el: <Navbar />,        key: "nav" },
-        { el: <HeroSection />,   key: "hero" },
-        { el: <AboutSection />,  key: "about" },
-        { el: <CouncilMembers />, key: "council" },
-        { el: <EventReports />,  key: "events" },
-        { el: <Gallery />,       key: "gallery" },
-        { el: <Contact />,       key: "contact" },
-        { el: <Footer />,        key: "footer" },
-      ].map(({ el, key }, index) => (
+      {sections.map(({ el, key }, index) => (
         <motion.div
           key={key}
           initial={SKIP_LAUNCH ? false : { opacity: 0, y: 24 }}

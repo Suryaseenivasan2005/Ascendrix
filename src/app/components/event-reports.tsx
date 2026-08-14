@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { useInView } from "motion/react";
 import { useRef } from "react";
 import {
@@ -15,8 +15,10 @@ import {
   Venus,
   Award,
 } from "lucide-react";
+import type { Batch } from "./council-members";
 
-const moments = [
+// ── 2025-2026: All events ──────────────────────────────────────────────────
+const moments2025 = [
   {
     id: 1,
     title: "Inauguration – Ascendrix",
@@ -115,9 +117,27 @@ const moments = [
   },
 ];
 
-export function EventReports() {
+// ── 2026-2027: Only Induction Day (so far) ────────────────────────────────
+const moments2026 = [
+  {
+    id: 1,
+    title: "Induction Day",
+    type: "Ceremony",
+    icon: GraduationCap,
+    description:
+      "Induction Day was a celebration of new beginnings, welcoming our first-year students into the college family. A day to connect, discover and take the first step towards an exciting journey ahead.",
+  },
+];
+
+interface EventReportsProps {
+  selectedBatch: Batch;
+}
+
+export function EventReports({ selectedBatch }: EventReportsProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  const moments = selectedBatch === "2025-2026" ? moments2025 : moments2026;
 
   return (
     <section
@@ -135,7 +155,7 @@ export function EventReports() {
           className="text-center mb-20"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-[#D4AF37] font-semibold mb-6 uppercase tracking-widest">
-            Timeline &amp; Agendas
+            Timeline &amp; Agendas &nbsp;·&nbsp;{selectedBatch}
           </div>
           <h2 className="text-5xl md:text-7xl font-extrabold mb-6">
             <span className="bg-gradient-to-r from-[#D4AF37] via-white to-[#D4AF37] bg-clip-text text-transparent">
@@ -143,71 +163,91 @@ export function EventReports() {
             </span>
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            A look back at the incredible events and celebrations successfully orchestrated by Ascendrix.
+            {selectedBatch === "2025-2026"
+              ? "A look back at the incredible events and celebrations successfully orchestrated by Ascendrix."
+              : "The journey of Ascendrix 2026-2027 is just beginning. Here are the milestones so far."}
           </p>
         </motion.div>
 
         {/* Timeline Path */}
-        <div className="relative">
-          {/* Vertical Center Line */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-[#D4AF37]/45 to-transparent" />
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={selectedBatch}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="relative"
+          >
+            {/* Vertical Center Line */}
+            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-[#D4AF37]/45 to-transparent" />
 
-          <div className="space-y-12">
-            {moments.map((moment, index) => {
-              const Icon = moment.icon;
-              return (
-                <motion.div
-                  key={moment.id}
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: index * 0.1 }}
-                  className={`relative flex items-center ${index % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
+            <div className="space-y-12">
+              {moments.map((moment, index) => {
+                const Icon = moment.icon;
+                return (
+                  <motion.div
+                    key={moment.id}
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ delay: index * 0.1 }}
+                    className={`relative flex items-center ${
+                      index % 2 === 0 ? "md:flex-row-reverse" : "md:flex-row"
                     }`}
-                >
-                  {/* Center Emblem/Icon */}
-                  <div className="absolute left-8 md:left-1/2 w-10 h-10 bg-black rounded-full border border-[#D4AF37]/50 -translate-x-1/2 flex items-center justify-center z-10 shadow-[0_0_15px_rgba(212,175,55,0.25)]">
-                    <Icon size={16} className="text-[#D4AF37]" />
-                  </div>
-
-                  {/* Card Container */}
-                  <div
-                    className={`w-full md:w-1/2 ${index % 2 === 0
-                        ? "md:pl-12 pl-20"
-                        : "md:pr-12 pl-20 md:pl-0"
-                      }`}
                   >
-                    <motion.div
-                      whileHover={{ y: -5, scale: 1.01 }}
-                      className="relative backdrop-blur-xl bg-white/5 border border-white/10 hover:border-[#D4AF37]/50 rounded-3xl p-6 md:p-8 transition-all duration-300 shadow-xl"
+                    {/* Center Emblem */}
+                    <div className="absolute left-8 md:left-1/2 w-10 h-10 bg-black rounded-full border border-[#D4AF37]/50 -translate-x-1/2 flex items-center justify-center z-10 shadow-[0_0_15px_rgba(212,175,55,0.25)]">
+                      <Icon size={16} className="text-[#D4AF37]" />
+                    </div>
+
+                    {/* Card Container */}
+                    <div
+                      className={`w-full md:w-1/2 ${
+                        index % 2 === 0 ? "md:pl-12 pl-20" : "md:pr-12 pl-20 md:pl-0"
+                      }`}
                     >
-                      {/* Gold Highlight Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/5 to-[#7A0019]/10 rounded-3xl opacity-0 hover:opacity-100 transition-opacity duration-300" />
+                      <motion.div
+                        whileHover={{ y: -5, scale: 1.01 }}
+                        className="relative backdrop-blur-xl bg-white/5 border border-white/10 hover:border-[#D4AF37]/50 rounded-3xl p-6 md:p-8 transition-all duration-300 shadow-xl"
+                      >
+                        {/* Gold Highlight Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/5 to-[#7A0019]/10 rounded-3xl opacity-0 hover:opacity-100 transition-opacity duration-300" />
 
-                      <div className="relative z-10">
-                        <div className="flex flex-wrap items-center gap-2 mb-3">
-                          <span className="text-[10px] font-bold uppercase tracking-wider text-black bg-[#D4AF37] px-2.5 py-0.5 rounded">
-                            {moment.type}
-                          </span>
-                          <span className="text-xs font-bold text-[#D4AF37]">
-                            #{moment.id}
-                          </span>
+                        <div className="relative z-10">
+                          <div className="flex flex-wrap items-center gap-2 mb-3">
+                            <span className="text-[10px] font-bold uppercase tracking-wider text-black bg-[#D4AF37] px-2.5 py-0.5 rounded">
+                              {moment.type}
+                            </span>
+                            <span className="text-xs font-bold text-[#D4AF37]">#{moment.id}</span>
+                          </div>
+                          <h3 className="text-xl md:text-2xl font-bold text-white mb-4">
+                            {moment.title}
+                          </h3>
+                          <p className="text-sm text-gray-400 leading-relaxed">{moment.description}</p>
                         </div>
+                      </motion.div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
 
-                        <h3 className="text-xl md:text-2xl font-bold text-white mb-4">
-                          {moment.title}
-                        </h3>
-
-                        <p className="text-sm text-gray-400 leading-relaxed">
-                          {moment.description}
-                        </p>
-                      </div>
-                    </motion.div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
+            {/* "More coming soon" for current batch */}
+            {selectedBatch === "2026-2027" && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4 }}
+                className="mt-16 text-center"
+              >
+                <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-dashed border-[#D4AF37]/40 text-[#D4AF37]/70 text-sm font-semibold backdrop-blur-sm">
+                  <Sparkles size={16} />
+                  More events coming soon...
+                </div>
+              </motion.div>
+            )}
+          </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   );
