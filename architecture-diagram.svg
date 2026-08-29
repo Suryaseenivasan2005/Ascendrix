@@ -1,0 +1,234 @@
+<svg viewBox="0 0 1200 620" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, 'Segoe UI', Inter, sans-serif">
+
+  <!-- ─── Defs ─────────────────────────────────────────────────────────────── -->
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#3B82F6"/>
+    </marker>
+    <marker id="arr-gold" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#D4AF37"/>
+    </marker>
+  </defs>
+
+  <!-- ─── Background (transparent) ─────────────────────────────────────────── -->
+  <!-- intentionally left transparent -->
+
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       ROW 1 — Public Site (top row)
+       ══════════════════════════════════════════════════════════════════════════ -->
+
+  <!-- NODE 1: Browser / Visitor -->
+  <rect x="30" y="50" width="200" height="120" rx="8" fill="#0F1520" stroke="#2A3A52" stroke-width="1"/>
+  <text x="130" y="72" text-anchor="middle" font-size="10" fill="#3B82F6" font-weight="600" letter-spacing="1">VISITOR</text>
+  <!-- Browser screen icon -->
+  <rect x="47" y="84" width="34" height="26" rx="3" fill="none" stroke="#3B82F6" stroke-width="1.5"/>
+  <line x1="47" y1="94" x2="81" y2="94" stroke="#3B82F6" stroke-width="1"/>
+  <circle cx="52" cy="89" r="1" fill="#3B82F6"/>
+  <circle cx="56" cy="89" r="1" fill="#3B82F6"/>
+  <circle cx="60" cy="89" r="1" fill="#3B82F6"/>
+  <line x1="59" y1="110" x2="69" y2="110" stroke="#3B82F6" stroke-width="1.5"/>
+  <line x1="54" y1="114" x2="74" y2="114" stroke="#3B82F6" stroke-width="1.5"/>
+  <!-- Text -->
+  <text x="92" y="98" font-size="11" fill="#FFFFFF" font-weight="700">Browser</text>
+  <text x="92" y="116" font-size="9" fill="#E5E7EB">Public Visitor</text>
+  <text x="92" y="132" font-size="9" fill="#E5E7EB">Reads student info</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="230" y1="110" x2="252" y2="110" stroke="#3B82F6" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="241" y="102" text-anchor="middle" font-size="8" fill="#3B82F6">visits</text>
+
+  <!-- NODE 2: Vite + React SPA -->
+  <rect x="260" y="50" width="200" height="120" rx="8" fill="#0F1520" stroke="#2A3A52" stroke-width="1"/>
+  <text x="360" y="72" text-anchor="middle" font-size="10" fill="#3B82F6" font-weight="600" letter-spacing="1">FRONTEND SPA</text>
+  <!-- React Logo Icon -->
+  <circle cx="295" cy="101" r="14" fill="none" stroke="#61dafb" stroke-width="1.5"/>
+  <circle cx="295" cy="101" r="3" fill="#61dafb"/>
+  <ellipse cx="295" cy="101" rx="14" ry="5.5" fill="none" stroke="#61dafb" stroke-width="1.2" transform="rotate(60 295 101)"/>
+  <ellipse cx="295" cy="101" rx="14" ry="5.5" fill="none" stroke="#61dafb" stroke-width="1.2" transform="rotate(120 295 101)"/>
+  <!-- Text -->
+  <text x="325" y="98" font-size="11" fill="#FFFFFF" font-weight="700">React + Vite</text>
+  <text x="325" y="116" font-size="9" fill="#E5E7EB">Tailwind CSS v4</text>
+  <text x="325" y="132" font-size="9" fill="#E5E7EB">Motion &amp; Radix UI</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="460" y1="110" x2="482" y2="110" stroke="#3B82F6" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="471" y="102" text-anchor="middle" font-size="8" fill="#3B82F6">routes</text>
+
+  <!-- NODE 3: Public Route Sections -->
+  <rect x="490" y="30" width="220" height="160" rx="8" fill="#0F1520" stroke="#2A3A52" stroke-width="1"/>
+  <text x="600" y="52" text-anchor="middle" font-size="10" fill="#3B82F6" font-weight="600" letter-spacing="1">PUBLIC ROUTE</text>
+  <!-- Text -->
+  <text x="506" y="76" font-size="9.5" fill="#FFFFFF" font-weight="700">🏠 Hero / About Sections</text>
+  <text x="506" y="94" font-size="9" fill="#E5E7EB">👥 Council Members (batch filter)</text>
+  <text x="506" y="112" font-size="9" fill="#E5E7EB">📅 Event Reports (timeline)</text>
+  <text x="506" y="130" font-size="9" fill="#E5E7EB">🖼 Gallery (masonry + lightbox)</text>
+  <text x="506" y="148" font-size="9" fill="#E5E7EB">📬 Contact / Location Map</text>
+  <text x="506" y="164" font-size="9" fill="#E5E7EB">✨ Glitter Cursor &amp; Overlay</text>
+
+  <!-- Arrow 3→4 -->
+  <line x1="710" y1="110" x2="732" y2="110" stroke="#3B82F6" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="721" y="102" text-anchor="middle" font-size="8" fill="#3B82F6">binds</text>
+
+  <!-- NODE 4: React Client State -->
+  <rect x="740" y="50" width="200" height="120" rx="8" fill="#0F1520" stroke="#2A3A52" stroke-width="1"/>
+  <text x="840" y="72" text-anchor="middle" font-size="10" fill="#3B82F6" font-weight="600" letter-spacing="1">CLIENT STATE</text>
+  <!-- Control state icon -->
+  <rect x="757" y="86" width="20" height="28" rx="2" fill="none" stroke="#3B82F6" stroke-width="1.5"/>
+  <line x1="761" y1="94" x2="773" y2="94" stroke="#3B82F6" stroke-width="1"/>
+  <circle cx="765" cy="94" r="2" fill="#3B82F6"/>
+  <line x1="761" y1="104" x2="773" y2="104" stroke="#3B82F6" stroke-width="1"/>
+  <circle cx="771" cy="104" r="2" fill="#3B82F6"/>
+  <!-- Text -->
+  <text x="792" y="98" font-size="11" fill="#FFFFFF" font-weight="700">React useState</text>
+  <text x="792" y="116" font-size="9" fill="#E5E7EB">selectedBatch state</text>
+  <text x="792" y="132" font-size="9" fill="#E5E7EB">launched / search filtering</text>
+
+  <!-- Arrow 4→5 -->
+  <line x1="940" y1="110" x2="962" y2="110" stroke="#3B82F6" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="951" y="102" text-anchor="middle" font-size="8" fill="#3B82F6">hosts</text>
+
+  <!-- NODE 5: Static Build/Assets -->
+  <rect x="970" y="50" width="200" height="120" rx="8" fill="#0F1520" stroke="#2A3A52" stroke-width="1"/>
+  <text x="1070" y="72" text-anchor="middle" font-size="10" fill="#3B82F6" font-weight="600" letter-spacing="1">STATIC DEPLOY</text>
+  <!-- Package Box Icon -->
+  <rect x="987" y="86" width="24" height="24" rx="2" fill="none" stroke="#D4AF37" stroke-width="1.5"/>
+  <line x1="987" y1="98" x2="1011" y2="98" stroke="#D4AF37" stroke-width="1"/>
+  <line x1="999" y1="86" x2="999" y2="110" stroke="#D4AF37" stroke-width="1"/>
+  <!-- Text -->
+  <text x="1022" y="98" font-size="11" fill="#FFFFFF" font-weight="700">Static Build</text>
+  <text x="1022" y="116" font-size="9" fill="#E5E7EB">Vite Dist Package</text>
+  <text x="1022" y="132" font-size="9" fill="#E5E7EB">Vercel / Netlify / Render</text>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       DIVIDER LINE
+       ══════════════════════════════════════════════════════════════════════════ -->
+  <line x1="30" y1="215" x2="1170" y2="215" stroke="#2A3A52" stroke-width="1" stroke-dasharray="4 4"/>
+  <rect x="490" y="206" width="220" height="18" rx="4" fill="#0F1520"/>
+  <text x="600" y="219" text-anchor="middle" font-size="10" fill="#6B7280" letter-spacing="1.5">PLANNED — ADMIN DASHBOARD ROUTE (FRONTEND-ONLY)</text>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       ROW 2 — Admin Dashboard
+       ══════════════════════════════════════════════════════════════════════════ -->
+
+  <!-- NODE A: Admin Visitor -->
+  <rect x="30" y="260" width="200" height="120" rx="8" fill="#0F1520" stroke="#D4AF37" stroke-width="1"/>
+  <text x="130" y="282" text-anchor="middle" font-size="10" fill="#D4AF37" font-weight="600" letter-spacing="1">ADMIN</text>
+  <!-- Lock Icon -->
+  <rect x="47" y="299" width="26" height="20" rx="3" fill="none" stroke="#D4AF37" stroke-width="1.5"/>
+  <path d="M52 299 Q52 290 60 290 Q68 290 68 299" fill="none" stroke="#D4AF37" stroke-width="1.5"/>
+  <circle cx="60" cy="309" r="1.5" fill="#D4AF37"/>
+  <line x1="60" y1="311" x2="60" y2="316" stroke="#D4AF37" stroke-width="1.5"/>
+  <!-- Text -->
+  <text x="88" y="308" font-size="11" fill="#FFFFFF" font-weight="700">Admin Browser</text>
+  <text x="88" y="326" font-size="9" fill="#E5E7EB">Council Officer</text>
+  <text x="88" y="342" font-size="9" fill="#E5E7EB">Accesses panel</text>
+
+  <!-- Arrow A→B -->
+  <line x1="230" y1="320" x2="252" y2="320" stroke="#D4AF37" stroke-width="1.5" marker-end="url(#arr-gold)"/>
+  <text x="241" y="312" text-anchor="middle" font-size="8" fill="#D4AF37">auth</text>
+
+  <!-- NODE B: Admin Authentication -->
+  <rect x="260" y="260" width="200" height="120" rx="8" fill="#0F1520" stroke="#D4AF37" stroke-width="1"/>
+  <text x="360" y="282" text-anchor="middle" font-size="10" fill="#D4AF37" font-weight="600" letter-spacing="1">ADMIN AUTH</text>
+  <!-- Shield Icon -->
+  <path d="M277 294 L289 300 L301 294 L301 306 Q301 316 289 321 Q277 316 277 306 Z" fill="none" stroke="#D4AF37" stroke-width="1.5"/>
+  <path d="M283 307 L287 311 L295 301" stroke="#D4AF37" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Text -->
+  <text x="320" y="308" font-size="11" fill="#FFFFFF" font-weight="700">/admin/login</text>
+  <text x="320" y="326" font-size="9" fill="#E5E7EB">Frontend Credentials</text>
+  <text x="320" y="342" font-size="9" fill="#E5E7EB">Protected Route Guard</text>
+
+  <!-- Arrow B→C -->
+  <line x1="460" y1="320" x2="482" y2="320" stroke="#D4AF37" stroke-width="1.5" marker-end="url(#arr-gold)"/>
+  <text x="471" y="312" text-anchor="middle" font-size="8" fill="#D4AF37">access</text>
+
+  <!-- NODE C: Admin Dashboard -->
+  <rect x="490" y="240" width="220" height="160" rx="8" fill="#0F1520" stroke="#D4AF37" stroke-width="1"/>
+  <text x="600" y="262" text-anchor="middle" font-size="10" fill="#D4AF37" font-weight="600" letter-spacing="1">ADMIN ROUTE</text>
+  <!-- Text -->
+  <text x="506" y="288" font-size="10" fill="#FFFFFF" font-weight="700">📋 Council Members Editor</text>
+  <text x="506" y="306" font-size="9" fill="#E5E7EB">📄 PDF Upload &amp; Batch Import</text>
+  <text x="506" y="324" font-size="9" fill="#E5E7EB">📅 Event Timeline Editor</text>
+  <text x="506" y="342" font-size="9" fill="#E5E7EB">🗓 Upcoming Events Manager</text>
+  <text x="506" y="360" font-size="9" fill="#E5E7EB">💾 Local edits stored in-browser</text>
+
+  <!-- Arrow C→D -->
+  <line x1="710" y1="320" x2="732" y2="320" stroke="#3B82F6" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="721" y="312" text-anchor="middle" font-size="8" fill="#3B82F6">extract</text>
+
+  <!-- NODE D: PDF Parser (FileReader / PDF.js) -->
+  <rect x="740" y="260" width="200" height="120" rx="8" fill="#0F1520" stroke="#2A3A52" stroke-width="1"/>
+  <text x="840" y="282" text-anchor="middle" font-size="10" fill="#3B82F6" font-weight="600" letter-spacing="1">PDF ENGINE</text>
+  <!-- File Icon -->
+  <rect x="757" y="296" width="22" height="28" rx="2" fill="none" stroke="#3B82F6" stroke-width="1.5"/>
+  <polyline points="769,296 769,304 779,304" fill="none" stroke="#3B82F6" stroke-width="1.2"/>
+  <line x1="762" y1="310" x2="774" y2="310" stroke="#3B82F6" stroke-width="1"/>
+  <line x1="762" y1="316" x2="772" y2="316" stroke="#3B82F6" stroke-width="1"/>
+  <!-- Text -->
+  <text x="792" y="308" font-size="11" fill="#FFFFFF" font-weight="700">FileReader API</text>
+  <text x="792" y="326" font-size="9" fill="#E5E7EB">Browser-side PDF.js</text>
+  <text x="792" y="342" font-size="9" fill="#E5E7EB">Extract names/roles</text>
+
+  <!-- Arrow D→E -->
+  <line x1="940" y1="320" x2="962" y2="320" stroke="#3B82F6" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="951" y="312" text-anchor="middle" font-size="8" fill="#3B82F6">store</text>
+
+  <!-- NODE E: localStorage Database -->
+  <rect x="970" y="260" width="200" height="120" rx="8" fill="#0F1520" stroke="#2A3A52" stroke-width="1"/>
+  <text x="1070" y="282" text-anchor="middle" font-size="10" fill="#3B82F6" font-weight="600" letter-spacing="1">BROWSER STORE</text>
+  <!-- Database Cylinder Icon -->
+  <ellipse cx="999" cy="298" rx="12" ry="4" fill="none" stroke="#3B82F6" stroke-width="1.5"/>
+  <line x1="987" y1="298" x2="987" y2="308" stroke="#3B82F6" stroke-width="1.5"/>
+  <line x1="1011" y1="298" x2="1011" y2="308" stroke="#3B82F6" stroke-width="1.5"/>
+  <path d="M987 304 Q999 309 1011 304" fill="none" stroke="#3B82F6" stroke-width="1.2"/>
+  <line x1="987" y1="308" x2="987" y2="318" stroke="#3B82F6" stroke-width="1.5"/>
+  <line x1="1011" y1="308" x2="1011" y2="318" stroke="#3B82F6" stroke-width="1.5"/>
+  <path d="M987 314 Q999 319 1011 314" fill="none" stroke="#3B82F6" stroke-width="1.2"/>
+  <!-- Text -->
+  <text x="1022" y="308" font-size="11" fill="#FFFFFF" font-weight="700">localStorage</text>
+  <text x="1022" y="326" font-size="9" fill="#E5E7EB">Persisted JSON arrays</text>
+  <text x="1022" y="342" font-size="9" fill="#E5E7EB">No cloud DB needed</text>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       DATA FLOW RETURN PATH
+       ══════════════════════════════════════════════════════════════════════════ -->
+  <path d="M 1070 260 Q 1070 200 955 200 Q 840 200 840 176" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arr-gold)"/>
+  <text x="955" y="193" text-anchor="middle" font-size="9" fill="#D4AF37" font-weight="600">Dynamic Sync → Hydrates Client State &amp; Public Sections</text>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       LEGEND & SPECIFICATIONS
+       ══════════════════════════════════════════════════════════════════════════ -->
+  <rect x="30" y="430" width="450" height="150" rx="8" fill="#0F1520" stroke="#2A3A52" stroke-width="1"/>
+  <text x="255" y="452" text-anchor="middle" font-size="11" fill="#E5E7EB" font-weight="700" letter-spacing="1">PROJECT SPECIFICATIONS &amp; TECH STACK</text>
+
+  <text x="50" y="474" font-size="10" fill="#3B82F6" font-weight="700">Frontend Stack</text>
+  <text x="50" y="490" font-size="9" fill="#E5E7EB">React 18 · Vite 6 · TypeScript · Tailwind CSS v4</text>
+  <text x="50" y="504" font-size="9" fill="#E5E7EB">Framer Motion v12 (animations) · Radix UI primitives · Lucide Icons</text>
+  <text x="50" y="518" font-size="9" fill="#E5E7EB">React Router v7 · React Responsive Masonry · Sonner</text>
+
+  <text x="50" y="538" font-size="10" fill="#D4AF37" font-weight="700">Database &amp; Storage</text>
+  <text x="50" y="554" font-size="9" fill="#E5E7EB">Static: Stored as internal constant arrays in component files</text>
+  <text x="50" y="568" font-size="9" fill="#E5E7EB">Dynamic (Admin route): Cached and read directly from localStorage</text>
+
+  <!-- Visual Legend Elements -->
+  <line x1="510" y1="460" x2="550" y2="460" stroke="#3B82F6" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="560" y="464" font-size="9.5" fill="#E5E7EB">Public Data Flow / Routes</text>
+
+  <line x1="510" y1="485" x2="550" y2="485" stroke="#D4AF37" stroke-width="1.5" marker-end="url(#arr-gold)"/>
+  <text x="560" y="489" font-size="9.5" fill="#E5E7EB">Admin Authenticated Flow</text>
+
+  <line x1="510" y1="510" x2="550" y2="510" stroke="#D4AF37" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arr-gold)"/>
+  <text x="560" y="514" font-size="9.5" fill="#E5E7EB">Dynamic Sync (localStorage → React State)</text>
+
+  <rect x="510" y="532" width="12" height="12" rx="2" fill="#0F1520" stroke="#D4AF37" stroke-width="1"/>
+  <text x="532" y="542" font-size="9.5" fill="#E5E7EB">Admin Protected Components</text>
+
+  <rect x="510" y="557" width="12" height="12" rx="2" fill="#0F1520" stroke="#2A3A52" stroke-width="1"/>
+  <text x="532" y="567" font-size="9.5" fill="#E5E7EB">Public / General Components</text>
+
+  <!-- Title block -->
+  <text x="960" y="500" text-anchor="middle" font-size="16" fill="#FFFFFF" font-weight="900" letter-spacing="3">ASCENDRIX ARCHITECTURE</text>
+  <text x="960" y="520" text-anchor="middle" font-size="10.5" fill="#6B7280">Student Council Platform · Tagore Engineering College</text>
+  <text x="960" y="538" text-anchor="middle" font-size="9.5" fill="#3B82F6" font-weight="600">Vite React SPA · 100% Client-Side Architecture</text>
+
+</svg>
